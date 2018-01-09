@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+ params = {required: true, 
+           type: 'select',
+           label: 'label', 
+           value: 'asdf', 
+           variants: ['psql', 'msql', 'asdf'],
+           patterns:[{pattern:/^(msql|psql|part1,part2)$/, error: 'SHORT'}]}
 }

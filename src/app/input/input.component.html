@@ -1,0 +1,10 @@
+<label for="value" [innerHTML]="label"></label>
+<input name="value" id="value" *ngIf="type == 'text'" [(ngModel)]="params.value" type="text">
+<input name="value" id="value" *ngIf="type == 'password'" [(ngModel)]="params.value" type="password">
+<select name="value" id="value" *ngIf="type == 'select'" [(ngModel)]="params.value">
+  <option *ngFor="let item of variants"  [value]="item" [innerHTML]="item"></option>
+</select>
+<ul [ngClass]="{'show_error': error}">
+    <li *ngFor="let error of errors" [innerHTML]="error"></li>
+</ul>
+<button (click)="validate()">sdsad</button>
