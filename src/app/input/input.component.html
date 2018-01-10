@@ -1,10 +1,16 @@
-<label for="value" [innerHTML]="label"></label>
-<input name="value" id="value" *ngIf="type == 'text'" [(ngModel)]="params.value" type="text">
-<input name="value" id="value" *ngIf="type == 'password'" [(ngModel)]="params.value" type="password">
-<select name="value" id="value" *ngIf="type == 'select'" [(ngModel)]="params.value">
-  <option *ngFor="let item of variants"  [value]="item" [innerHTML]="item"></option>
-</select>
+<label for="value" [innerHTML]="label">
+</label>
+<input [ngClass]="{'input_error': error}" name="value" id="value" *ngIf="type == 'text'" [(ngModel)]="params.value" type="text">
+<input [ngClass]="{'input_error': error}" name="value" id="value" *ngIf="type == 'password'" [(ngModel)]="params.value" type="password">
+<div *ngIf="type == 'select'"  class="select">
+  <select [ngClass]="{'input_error': error}" name="value" id="value" [(ngModel)]="params.value">
+    <option *ngFor="let item of variants" [value]="item" [innerHTML]="item"></option>
+  </select>
+  <i (click)="activate()" class="fa fa-angle-down"></i>
+</div>
+
+
 <ul [ngClass]="{'show_error': error}">
-    <li *ngFor="let error of errors" [innerHTML]="error"></li>
+  <li *ngFor="let error of errors" [innerHTML]="error"></li>
 </ul>
 <button (click)="validate()">sdsad</button>

@@ -9,7 +9,7 @@ label {
 ul {
     margin: 0;
     padding-left: 0px;
-    color: #d03636;
+    color: #ff0000;
     list-style: none;
     font-size: 14px;
     min-height: 0;
@@ -31,6 +31,15 @@ select {
     color: rgba(0, 0, 0, 0.6);
     border: solid 1px #000000;
     padding: 5px 10px;
+    transition: 1s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input_error {
+    background-color: #f3d6d67d;
+    border: solid 1px #ff0000;
 }
 
 input {
@@ -43,10 +52,23 @@ input {
     padding: 14px 21px 12px 14px;
     font-size: 16px;
     margin-top: 5px;
+    transition: 1s;
 }
 
 .show_error {
     min-height: 15px;
     max-height: 100px;
     opacity: 1;
+    margin: 5px;
 }
+
+.select {
+    position: relative
+}
+
+select + i {
+    position: absolute;
+    right: 6px;
+    top: calc(35px / 2);
+    pointer-events: none;
+  }

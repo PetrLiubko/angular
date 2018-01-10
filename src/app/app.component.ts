@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app works!';
 
  params = {required: true, 
-           type: 'select',
+           type: 'text',
            label: 'label', 
            value: 'asdf', 
            variants: ['psql', 'msql', 'asdf'],
